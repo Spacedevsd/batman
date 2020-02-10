@@ -17,11 +17,7 @@ class Batman:
         def decorator(f):
             self.routes[path] = f
             return f
-        return decorator
-    
-    def _render(self, response, text=None, view=None):
-        if text and not view:
-            response.body = text
+        return decorator 
         
     def app_response(self, request):
         response = Response()
