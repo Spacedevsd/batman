@@ -1,24 +1,17 @@
-from batman.template import Template
 from batman import Batman
-
+from batman.template import Template
 
 batman = Batman()
 view = Template()
 
-
-@batman.route("/character")
+@batman.route("/characters")
 def characters():
-    return view.render("character.html", {})
-
-
-@batman.route("/city")
-def city():
     context = {
-        "name":  "Gothan City",
-        "hero": "Batman"
+        "name": "Alfred"
     }
+    
+    return view.render("characters.html", context)
 
-    return view.render("city.html", context)
 
 if __name__ == "__main__":
-    batman.run(port=8000, reloader=True)
+    batman.run(port=4000, reloader=True)
