@@ -3,18 +3,16 @@ from batman import Batman
 
 
 batman = Batman()
+template = Template()
 
 
 @batman.route("/character")
 def characters():
-    template = Template()
     return template.render("character.html", {})
 
 
 @batman.route("/city")
 def city():
-    template = Template()
-    
     context = {
         "name":  "Gothan City",
         "hero": "Batman"    
